@@ -17,6 +17,12 @@ else
   echo "Skipping activation"
 fi
 
+echo "start copy"
+
+ls -al /opt/unity/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/WebGLTemplates
+cp -R $GITHUB_WORKSPACE/engine-template/Unity/WebGLTemplate/Hoora /opt/unity/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/WebGLTemplates/
+ls -al /opt/unity/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/WebGLTemplates
+
 source /steps/build.sh
 
 if [ "$SKIP_ACTIVATION" != "true" ]; then
